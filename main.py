@@ -33,7 +33,9 @@ def slowprint(text, speed=0.041):
     print()    
     
 def attacknormal(hp):
-    
+    pygame.mixer.music.stop()
+    pygame.mixer.music.load("combatnormal.mp3")
+    pygame.mixer.music.play(-1,0.0)
     enemyhp = 120
     enemy = random.choice(enemies)
     enemyhp += random.randint(-20, 20)
@@ -119,6 +121,9 @@ def attacknormal(hp):
         exit()
         
 def attackstrong(hp):
+    pygame.mixer.music.stop()
+    pygame.mixer.music.load("strongcombat.mp3")
+    pygame.mixer.music.play(-1,0.0)
     global char
     pygame.mixer.music.stop()
     pygame.mixer.music.load("strongcombat.mp3")
@@ -337,7 +342,7 @@ def createchar(hp:int, attackchance:int):
             hp += 120
             attackchance += 1000
                     
-        slowprint("\nThe Great Kingdom has not seen sunlight for years. You must destroy the Dark Crown. Let the game begin.")
+        slowprint("\n... And so it begins.")
         sleep(3)
         slowprint("\n")
         return(hp, attackchance)
@@ -829,22 +834,92 @@ def section6(hp:int):
         elif way == "1":
             section2(hp)
 
-
 def section7 (hp:int):
     global cloak
     slowprint("\nYou proceed.")
     slowprint("\nIt's a set of servants' quarters. Nothing to see here....")
     sleep(1)
-    slowprint("\nOh, no. You are not alone.",0.16)
+    slowprint("\nOh, no. You are not alone...",0.12)
     if cloak == False:
         attacknormal(hp)
     else:
-        slowprint("\nJust your imagination. THIS SECTION OF THE GAME ISN'T FINISHED!! SO GAME OVER FOR NOW")
-        exit()
-    
-        
+        sleep(1)
+        slowprint("\nJust your imagination.")
+    slowprint("\nAn interesting suit of armor. Take it?")
+    if input("\n(y/n)").lower() == "y":
+        slowprint("\nNeat. Little bulky, though.")
+        hp += 15
+    slowprint("\nNothing more here. You press on.")
+    slowprint("\nThere are two paths here. One is a set of stairs leading up, and another a flight of grim stone leading down.")
+    slowprint("\nAnd a third path, this time forward, to the Throne Room.\nAnd a stealthy fourth road, to the left.")
+    slowprint("\nWhich way will it be?")
+    choice = input("\n(up/down/forward/left)").lower()
+    if choice == "up":
+        slowprint("\nHuh, a junction that seems... familiar.")
+        section2(hp)
+        return
+    elif choice == "down":
+        slowprint("\nA gamble, but it may well be a worthy one.")
+        section4(hp)
+    elif choice == "forward":
+        slowprint("\nThe objective is foremost. In and out, quick and easy.")
+        section3(hp)
+    else:
+        slowprint("\nYou duck into the left path.")
+        slowprint("\nCaution!!!!! A monster is posted as guard here.")
+        attackstrong(hp)
+        slowprint("\nIt leads to a set of bare, functional quarters. The living room shows that clearly, someone lives here.")
+        slowprint("\nYou proceed to the bedroom.")
+        sleep(2)
+        slowprint("\nQuiet! The Dark King himself is sleeping.")
+        assassinate = input("\nA difficult choice, but a necessary one... what will you do with him?\nYou can either end his life and the crown, or destroy the crown without waking him, or take the crown for yourself.\n(kill/take/destroy)").lower()
+        if assassinate == "take":
+            sleep(1)
+        if assassinate == "kill":
+            slowprint("\nOne more death to the pyre.")
+            sleep(1)
+            slowprint("\nYou close your eyes and swing.")
+            sleep(2)
+            slowprint("\nYour sword does a clean job.")
+            slowprint("\nYou turn and leave, not wanting to stay here a second longer than you have to.")
+            slowprint("\nThere is light and peace have returned. Monsters are changing back into human form.\nChildren and parents, families, lovers. They reunite. The world is whole.\nAll is blooming.")
+            slowprint("\nYet, you will never wash the blood off your hands.")
+            slowprint("\n\nGAME OVER - ENDING: [REGICIDAL]\n")
+            sleep(0.2)
+            slowprint("####TITLES GAINED:####\n 'THANE OF CAWDOR'\n'INVISBLE HAND'")
+            slowprint("\n\n---- CREDITS ----\nGame Development: Jacob\nLogic design: Jacob\nPlaytesters:\nTony Q\nAika B\nMitchell S\nOlivia S\nCoco W\n\n",0.054) 
+            slowprint("THANK YOU FOR PLAYING!",0.2)
+            exit()
+        if assassinate == "destroy":
+            slowprint("\nYou drive a dagger into the crown's centrepiece jewel, and fracture the brittle metal.")
+            slowprint("\nThe Dark King does not rouse.")
+            slowprint("\nYou leave him be.")
+            slowprint("\nYou climb to the highest tower of the castle and hail the eastern Sun.")
+            slowprint("\n\nGAME OVER - ENDING: [SILENT DAWN]\n\n")
+            sleep(0.2)
+            slowprint("####TITLES GAINED:####\n 'THE MERCIFUL'\n'SUNBRINGER'")
+            slowprint("\n\n---- CREDITS ----\nGame Development: Jacob\nLogic design: Jacob\nPlaytesters:\nTony Q\nAika B\nMitchell S\nOlivia S\nCoco W\n\n",0.054) 
+            slowprint("THANK YOU FOR PLAYING!",0.2)
+            exit()
+        if assassinate == "take":
+            slowprint("\nYou wedge the crown squarely onto your head.")
+            slowprint("\nThe King, sensing the disturbance in the power, rouses in a fit of terror.")
+            slowprint("\nHe shouts a frenzied warning at you, but the Crown has already taken hold of you.")
+            slowprint("\nYou understand now, why the Darkness exists.\nThe Dark King was merely attempting to contain the true horrors of the Crown with his mind, a mind impossibly strong.")
+            sleep(1)
+            slowprint("\nHowever, you are no King. Neither is your mind fit to be one.")
+            slowprint("\nThe visions start. They don't stop. The horror doesn't endtheydon'tstopitneverstopsitneverstopsitneverstopsitneverstopsIneedoutIneedoutIneedoutIneedoutIneedoutSTOPSTOPITSTOPITSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOP")
+            slowprint("\n\nGAME OVER - ENDING: [PLEASURE IN BEING MAD THAT ONLY MADMEN KNOW]\n\n")
+            sleep(3)
+            slowprint("####TITLES GAINED:####\n 'MADMAN'\n'OUTER GOD'")
+            slowprint("\n\n---- CREDITS ----\nGame Development: Jacob\nLogic design: Jacob\nPlaytesters:\nTony Q\nAika B\nMitchell S\nOlivia S\nCoco W\n\n",0.054) 
+            slowprint("THANK YOU FOR PLAYING!",0.2)
+            exit()
+
+
+
 if __name__ == "__main__":
-    slowprint("\n\n    Initializing......",0.2)
+    slowprint("\n\n                    Initializing......",0.2)
     pygame.init()
     pygame.mixer.init()
     pygame.mixer.music.load("tjomnaja.mp3")
@@ -852,8 +927,11 @@ if __name__ == "__main__":
     slowprint("PYTHON 3.11 INTITIALIZED")
     slowprint("LOGIC MODULE INITIALIZED")
     slowprint("TIME, DELAY, ATTACK, MATHEMATIC MODULES INITIALIZED")
+    slowprint("MUSIC AND AUDIO MODULE INITIALIZED")
+    sleep(0.5)
     slowprint("INITALIZING COMPLETE",0.1)
     name = input("Please enter your name: ")
+    hp, attackchance = createchar(hp, attackchance)
     pygame.mixer.music.play(-1,0.0)
     slowprint(f"\nThe year is Unix Time {unix}.",0.105)
     slowprint("\nDarkness is upon the Kingdom. There has not been a sunrise for years.\nEverywhere there is mist and darkness and rot.\nMonsters roam free and hunt down dozens and dozens every day.\nFamilies ripped apart, farming ravaged by monsters that roam in the eternal night.\nAnd with the disappearance of the Sun, it is as if all good magic has gone out of the world with it.\n")
@@ -865,5 +943,4 @@ if __name__ == "__main__":
     slowprint("\nDo not even think of it.",0.2)
     slowprint(f"\n{name}, your goal is to restore light to this world. Forward be you unto dawn.")
     sleep(1)
-    hp, attackchance = createchar(hp, attackchance)
     section1(hp)
