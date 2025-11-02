@@ -907,15 +907,15 @@ def section7 (hp:int):
             slowprint("\nHe shouts a frenzied warning at you, but the Crown has already taken hold of you.")
             slowprint("\nYou understand now, why the Darkness exists.\nThe Dark King was merely attempting to contain the true horrors of the Crown with his mind, a mind impossibly strong.")
             sleep(1)
-            slowprint("\nHowever, you are no King. Neither is your mind fit to be one.")
-            slowprint("\nThe visions start. They don't stop. The horror doesn't endtheydon'tstopitneverstopsitneverstopsitneverstopsitneverstopsIneedoutIneedoutIneedoutIneedoutIneedoutSTOPSTOPITSTOPITSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOP")
+            slowprint("\nAlas, you are no King. Neither is your mind fit to be one.")
+            slowprint("\nThe visions start. They don't stop. The horror doesn't endtheydon'tstopitneverstopsitneverstopsitneverstopsitneverstopsIneedoutIneedoutIneedoutIneedoutIneedoutSTOPSTOPITSTOPITSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPSTOPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP")
+            sleep(5)
             slowprint("\n\nGAME OVER - ENDING: [PLEASURE IN BEING MAD THAT ONLY MADMEN KNOW]\n\n")
             sleep(3)
             slowprint("####TITLES GAINED:####\n 'MADMAN'\n'OUTER GOD'")
             slowprint("\n\n---- CREDITS ----\nGame Development: Jacob\nLogic design: Jacob\nPlaytesters:\nTony Q\nAika B\nMitchell S\nOlivia S\nCoco W\n\n",0.054) 
             slowprint("THANK YOU FOR PLAYING!",0.2)
             exit()
-
 
 
 if __name__ == "__main__":
